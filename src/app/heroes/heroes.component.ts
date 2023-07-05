@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HEROES } from '../constants';
+import { Hero } from '../hero';
 
 @Component({
   selector: 'app-heroes',
@@ -8,4 +9,9 @@ import { HEROES } from '../constants';
 })
 export class HeroesComponent {
   heroes = HEROES;
+  selectedHero?: Hero;
+
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
+  } 
 }
